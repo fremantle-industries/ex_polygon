@@ -6,7 +6,9 @@ defmodule ExPolygon.MixProject do
       app: :ex_polygon,
       version: "0.0.1",
       elixir: "~> 1.8",
+      package: package(),
       start_permanent: Mix.env() == :prod,
+      description: description(),
       deps: deps()
     ]
   end
@@ -29,5 +31,17 @@ defmodule ExPolygon.MixProject do
       {:ex_unit_notifier, "~> 0.1", only: :test},
       {:dialyxir, "~> 1.0.0-rc.4", only: :dev, runtime: false}
     ]
+  end
+
+  defp description do
+    "Polygon.io API Client for Elixir"
+  end
+
+  defp package do
+    %{
+      licenses: ["MIT"],
+      maintainers: ["Alex Kwiatkowski"],
+      links: %{"GitHub" => "https://github.com/fremantle-capital/ex_polygon"}
+    }
   end
 end
