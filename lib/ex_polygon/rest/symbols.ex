@@ -1,4 +1,4 @@
-defmodule ExPolygon.Rest.Companies do
+defmodule ExPolygon.Rest.Symbols do
   @path "/v1/meta/symbols"
   @details "company"
   @ratings "analysts"
