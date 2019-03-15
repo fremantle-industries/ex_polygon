@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v2/reference/markets?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"status\":\"OK\",\"results\":[{\"market\":\"STOCKS\",\"desc\":\"Stocks / Equities / ETFs\"},{\"market\":\"INDICES\",\"desc\":\"Indices\"},{\"market\":\"MF\",\"desc\":\"Mutual Funds\"},{\"market\":\"MMF\",\"desc\":\"Money Market Funds\"},{\"market\":\"CRYPTO\",\"desc\":\"Crypto\"},{\"market\":\"FX\",\"desc\":\"Forex / Currencies\"},{\"market\":\"BONDS\",\"desc\":\"Bonds\"}]}",
+      "headers": {
+        "Server": "nginx/1.13.12",
+        "Date": "Sat, 9 Mar 2019 00:26:37 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "316",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "*",
+        "access-control-allow-headers": "Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, Api-Version, Response-Time",
+        "access-control-allow-methods": "GET",
+        "access-control-expose-headers": "Api-Version, Request-Id, Response-Time",
+        "content-md5": "5FxhDZ6F3sg7nIOIWhu4lA==",
+        "api-version": "2.0.1",
+        "request-id": "25f4fd04-18bd-4d05-82f5-485bf15faed7",
+        "response-time": "3",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
