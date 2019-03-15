@@ -1,9 +1,10 @@
 defmodule ExPolygon.Rest.HTTPClient do
   @endpoint :ex_polygon |> Application.get_env(:endpoint, "https://api.polygon.io") |> URI.parse()
 
+  @type api_key :: String.t()
   @type shared_error_reasons :: {:unauthorized, String.t()}
 
-  @spec get(String.t(), map, String.t()) :: {:ok, map} | {:error, shared_error_reasons}
+  @spec get(String.t(), map, api_key) :: {:ok, map} | {:error, shared_error_reasons}
   def get(path, params, api_key) do
     query_params = params |> Map.put(:apiKey, api_key)
     path |> get(query_params)
