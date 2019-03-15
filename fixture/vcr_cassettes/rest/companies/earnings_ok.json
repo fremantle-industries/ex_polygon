@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v1/meta/symbols/AAPL/earnings?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"symbol\":\"AAPL\",\"EPSReportDate\":\"11/01/2018\",\"fiscalPeriod\":\"Q4 2018\",\"fiscalEndDate\":\"09/30/2018\",\"actualEPS\":2.91,\"consensusEPS\":2.79,\"estimatedEPS\":2.79,\"announceTime\":\"AMC\",\"numberOfEstimates\":12,\"EPSSurpriseDollar\":0.12},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"07/31/2018\",\"fiscalPeriod\":\"Q3 2018\",\"fiscalEndDate\":\"06/30/2018\",\"actualEPS\":2.34,\"consensusEPS\":2.17,\"estimatedEPS\":2.17,\"announceTime\":\"AMC\",\"numberOfEstimates\":10,\"EPSSurpriseDollar\":0.17},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"05/01/2018\",\"fiscalPeriod\":\"Q2 2018\",\"fiscalEndDate\":\"03/31/2018\",\"actualEPS\":2.73,\"consensusEPS\":2.69,\"estimatedEPS\":2.69,\"announceTime\":\"AMC\",\"numberOfEstimates\":10,\"EPSSurpriseDollar\":0.04},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"02/01/2018\",\"fiscalPeriod\":\"Q1 2018\",\"fiscalEndDate\":\"12/31/2017\",\"actualEPS\":3.89,\"consensusEPS\":3.82,\"estimatedEPS\":3.82,\"announceTime\":\"AMC\",\"numberOfEstimates\":9,\"EPSSurpriseDollar\":0.07},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"11/02/2017\",\"fiscalPeriod\":\"Q4 2017\",\"fiscalEndDate\":\"09/30/2017\",\"actualEPS\":2.07,\"consensusEPS\":1.87,\"estimatedEPS\":1.87,\"announceTime\":\"AMC\",\"numberOfEstimates\":10,\"EPSSurpriseDollar\":0.2},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"08/01/2017\",\"fiscalPeriod\":\"Q3 2017\",\"fiscalEndDate\":\"06/30/2017\",\"actualEPS\":1.67,\"consensusEPS\":1.57,\"estimatedEPS\":1.57,\"announceTime\":\"AMC\",\"numberOfEstimates\":13,\"EPSSurpriseDollar\":0.1},{\"symbol\":\"AAPL\",\"EPSReportDate\":\"05/02/2017\",\"fiscalPeriod\":\"Q2 2017\",\"fiscalEndDate\":\"03/31/2017\",\"actualEPS\":2.1,\"consensusEPS\":2.02,\"estimatedEPS\":2.02,\"announceTime\":\"AMC\",\"numberOfEstimates\":14,\"EPSSurpriseDollar\":0.08}]",
+      "headers": {
+        "Server": "nginx/1.13.12",
+        "Date": "Sat, 9 Mar 2019 02:11:21 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "1586",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "*",
+        "access-control-allow-headers": "Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, Api-Version, Response-Time",
+        "access-control-allow-methods": "GET",
+        "access-control-expose-headers": "Api-Version, Request-Id, Response-Time",
+        "content-md5": "Anyi07kJLarEzwjsHMDgDA==",
+        "api-version": "1.0.0",
+        "request-id": "bee47950-5515-4043-a2a3-70745313ae45",
+        "response-time": "5",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

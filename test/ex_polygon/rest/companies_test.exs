@@ -33,4 +33,12 @@ defmodule ExPolygon.Rest.CompaniesTest do
       assert dividend.payment_date != nil
     end
   end
+
+  test ".earnings returns an ok tuple with a list of earnings" do
+    use_cassette "rest/companies/earnings_ok" do
+      assert {:ok, earnings} = ExPolygon.Rest.Companies.earnings("AAPL", @api_key)
+      assert [%ExPolygon.Earning{} = earning | _] = earnings
+      assert earning.actual_eps != nil
+    end
+  end
 end
