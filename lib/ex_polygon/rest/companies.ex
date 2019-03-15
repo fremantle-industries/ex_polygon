@@ -2,6 +2,7 @@ defmodule ExPolygon.Rest.Companies do
   @path "/v1/meta/symbols"
   @details "company"
   @ratings "analysts"
+  @dividends "dividends"
 
   def details(symbol, api_key) do
     [@path, symbol, @details]
@@ -15,6 +16,22 @@ defmodule ExPolygon.Rest.Companies do
     |> Path.join()
     |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
     |> parse_response(ExPolygon.CompanyRatings)
+  end
+
+  def dividends(symbol, api_key) do
+    [@path, symbol, @dividends]
+    |> Path.join()
+    |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
+    |> parse_response([ExPolygon.Dividend])
+  end
+
+  def parse_response({:ok, data}, [mod | _]) do
+    list =
+      data
+      |> Enum.map(&Mapail.map_to_struct(&1, mod, transformations: [:snake_case]))
+      |> Enum.map(fn {:ok, t} -> t end)
+
+    {:ok, list}
   end
 
   def parse_response({:ok, data}, mod) do

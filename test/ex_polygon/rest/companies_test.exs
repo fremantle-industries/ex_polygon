@@ -25,4 +25,12 @@ defmodule ExPolygon.Rest.CompaniesTest do
       assert ratings.analysts != nil
     end
   end
+
+  test ".dividends returns an ok tuple with a list of dividends" do
+    use_cassette "rest/companies/dividends_ok" do
+      assert {:ok, dividends} = ExPolygon.Rest.Companies.dividends("AAPL", @api_key)
+      assert [%ExPolygon.Dividend{} = dividend | _] = dividends
+      assert dividend.payment_date != nil
+    end
+  end
 end
