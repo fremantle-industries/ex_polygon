@@ -41,4 +41,12 @@ defmodule ExPolygon.Rest.CompaniesTest do
       assert earning.actual_eps != nil
     end
   end
+
+  test ".financials returns an ok tuple with a list of financials" do
+    use_cassette "rest/companies/financials_ok" do
+      assert {:ok, financials} = ExPolygon.Rest.Companies.financials("AAPL", @api_key)
+      assert [%ExPolygon.Financial{} = financial | _] = financials
+      assert financial.gross_profit != nil
+    end
+  end
 end

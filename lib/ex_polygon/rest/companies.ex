@@ -4,6 +4,7 @@ defmodule ExPolygon.Rest.Companies do
   @ratings "analysts"
   @dividends "dividends"
   @earnings "earnings"
+  @financials "financials"
 
   def details(symbol, api_key) do
     [@path, symbol, @details]
@@ -31,6 +32,13 @@ defmodule ExPolygon.Rest.Companies do
     |> Path.join()
     |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
     |> parse_response([ExPolygon.Earning])
+  end
+
+  def financials(symbol, api_key) do
+    [@path, symbol, @financials]
+    |> Path.join()
+    |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
+    |> parse_response([ExPolygon.Financial])
   end
 
   def parse_response({:ok, data}, [mod | _]) do
