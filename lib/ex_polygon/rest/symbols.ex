@@ -6,11 +6,11 @@ defmodule ExPolygon.Rest.Symbols do
   @earnings "earnings"
   @financials "financials"
 
-  def details(symbol, api_key) do
+  def company_details(symbol, api_key) do
     [@path, symbol, @details]
     |> Path.join()
     |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
-    |> parse_response(ExPolygon.Company)
+    |> parse_response(ExPolygon.CompanyDetail)
   end
 
   def ratings(symbol, api_key) do

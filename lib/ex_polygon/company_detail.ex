@@ -1,4 +1,4 @@
-defmodule ExPolygon.Company do
+defmodule ExPolygon.CompanyDetail do
   defstruct ~w(
     active
     bloomberg

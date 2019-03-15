@@ -10,11 +10,11 @@ defmodule ExPolygon.Rest.SymbolsTest do
 
   @api_key System.get_env("POLYGON_API_KEY")
 
-  test ".details returns an ok tuple with the company details" do
-    use_cassette "rest/symbols/details_ok" do
-      assert {:ok, company} = ExPolygon.Rest.Symbols.details("AAPL", @api_key)
-      assert %ExPolygon.Company{} = company
-      assert company.exchange_symbol != nil
+  test ".company_details returns an ok tuple with the company detail" do
+    use_cassette "rest/symbols/company_details_ok" do
+      assert {:ok, detail} = ExPolygon.Rest.Symbols.company_details("AAPL", @api_key)
+      assert %ExPolygon.CompanyDetail{} = detail
+      assert detail.exchange_symbol != nil
     end
   end
 
