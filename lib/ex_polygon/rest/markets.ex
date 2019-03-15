@@ -1,5 +1,10 @@
 defmodule ExPolygon.Rest.Markets do
+  @type market :: ExPolygon.Market.t()
+  @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
+
   @path "/v2/reference/markets"
+
+  @spec all(api_key) :: {:ok, [market]}
   def all(api_key) do
     @path
     |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
