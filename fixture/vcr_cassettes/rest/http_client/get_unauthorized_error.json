@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v1/marketstatus/now?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"message\":\"API Key - Alpaca API Keys are not permissioned for this route\"}",
+      "headers": {
+        "Server": "nginx/1.13.12",
+        "Date": "Sat, 9 Mar 2019 01:14:13 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "75",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, Api-Version, Response-Time",
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Expose-Headers": "Api-Version, Request-Id, Response-Time",
+        "Content-MD5": "mUbjkmk6v5fmTs25bz5wMQ==",
+        "Api-Version": "1.0.0",
+        "Request-Id": "1b14e182-8f65-41b4-b91d-2982089a3de3",
+        "Response-Time": "39",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 401,
+      "type": "ok"
+    }
+  }
+]
