@@ -1,4 +1,6 @@
 defmodule ExPolygon.Earning do
+  @type t :: %ExPolygon.Earning{}
+
   defstruct ~w(
     symbol
     eps_report_date

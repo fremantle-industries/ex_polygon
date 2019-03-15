@@ -1,4 +1,6 @@
 defmodule ExPolygon.CompanyRatings do
+  @type t :: %ExPolygon.CompanyRatings{}
+
   defstruct ~w(
     symbol
     analysts

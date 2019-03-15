@@ -1,4 +1,6 @@
 defmodule ExPolygon.Dividend do
+  @type t :: %ExPolygon.Dividend{}
+
   defstruct ~w(
     symbol
     type

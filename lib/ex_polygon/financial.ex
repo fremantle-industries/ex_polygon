@@ -1,4 +1,6 @@
 defmodule ExPolygon.Financial do
+  @type t :: %ExPolygon.Financial{}
+
   defstruct ~w(
     symbol
     report_date

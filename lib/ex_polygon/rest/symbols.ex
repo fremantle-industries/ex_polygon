@@ -1,4 +1,12 @@
 defmodule ExPolygon.Rest.Symbols do
+  @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
+  @type symbol :: String.t()
+  @type company_detail :: ExPolygon.CompanyDetail.t()
+  @type company_ratings :: ExPolygon.CompanyRatings.t()
+  @type dividend :: ExPolygon.Dividend.t()
+  @type earning :: ExPolygon.Earning.t()
+  @type financial :: ExPolygon.Financial.t()
+
   @path "/v1/meta/symbols"
   @details "company"
   @ratings "analysts"
@@ -6,6 +14,7 @@ defmodule ExPolygon.Rest.Symbols do
   @earnings "earnings"
   @financials "financials"
 
+  @spec company_details(symbol, api_key) :: {:ok, company_detail}
   def company_details(symbol, api_key) do
     [@path, symbol, @details]
     |> Path.join()
@@ -13,6 +22,7 @@ defmodule ExPolygon.Rest.Symbols do
     |> parse_response(ExPolygon.CompanyDetail)
   end
 
+  @spec ratings(symbol, api_key) :: {:ok, company_ratings}
   def ratings(symbol, api_key) do
     [@path, symbol, @ratings]
     |> Path.join()
@@ -20,6 +30,7 @@ defmodule ExPolygon.Rest.Symbols do
     |> parse_response(ExPolygon.CompanyRatings)
   end
 
+  @spec dividends(symbol, api_key) :: {:ok, [dividend]}
   def dividends(symbol, api_key) do
     [@path, symbol, @dividends]
     |> Path.join()
@@ -27,6 +38,7 @@ defmodule ExPolygon.Rest.Symbols do
     |> parse_response([ExPolygon.Dividend])
   end
 
+  @spec earnings(symbol, api_key) :: {:ok, [earning]}
   def earnings(symbol, api_key) do
     [@path, symbol, @earnings]
     |> Path.join()
@@ -34,6 +46,7 @@ defmodule ExPolygon.Rest.Symbols do
     |> parse_response([ExPolygon.Earning])
   end
 
+  @spec financials(symbol, api_key) :: {:ok, [financial]}
   def financials(symbol, api_key) do
     [@path, symbol, @financials]
     |> Path.join()
