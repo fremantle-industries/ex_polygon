@@ -41,7 +41,7 @@ defmodule ExPolygon.Rest.Companies do
     |> parse_response([ExPolygon.Financial])
   end
 
-  def parse_response({:ok, data}, [mod | _]) do
+  defp parse_response({:ok, data}, [mod | _]) do
     list =
       data
       |> Enum.map(&Mapail.map_to_struct(&1, mod, transformations: [:snake_case]))
@@ -50,7 +50,7 @@ defmodule ExPolygon.Rest.Companies do
     {:ok, list}
   end
 
-  def parse_response({:ok, data}, mod) do
+  defp parse_response({:ok, data}, mod) do
     {:ok, data} = Mapail.map_to_struct(data, mod, transformations: [:snake_case])
     {:ok, data}
   end
