@@ -4,7 +4,7 @@ defmodule ExPolygon.MixProject do
   def project do
     [
       app: :ex_polygon,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.8",
       package: package(),
       start_permanent: Mix.env() == :prod,

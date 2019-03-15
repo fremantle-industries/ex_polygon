@@ -10,7 +10,7 @@ by adding `ex_polygon` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_polygon, "~> 0.0.1"}
+    {:ex_polygon, "~> 0.0.2"}
   ]
 end
 ```
