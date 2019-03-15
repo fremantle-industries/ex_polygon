@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v2/reference/types?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"status\":\"OK\",\"results\":{\"types\":{\"CS\":\"Common Stock\",\"ADR\":\"American Depository Receipt\",\"NVDR\":\"Non-Voting Depository Receipt\",\"GDR\":\"Global Depositary Receipt\",\"SDR\":\"Special Drawing Right\",\"CEF\":\"Closed-End Fund\",\"ETP\":\"Exchange Traded Product/Fund\",\"REIT\":\"Real Estate Investment Trust\",\"MLP\":\"Master Limited Partnership\",\"WRT\":\"Equity WRT\",\"PUB\":\"Public\",\"NYRS\":\"New York Registry Shares\",\"UNIT\":\"Unit\",\"RIGHT\":\"Right\",\"TRAK\":\"Tracking stock or targeted stock\",\"LTDP\":\"Limited Partnership\",\"RYLT\":\"Royalty Trust\",\"MF\":\"Mutual Fund\",\"PFD\":\"Preferred Stock\",\"FDR\":\"Foreign Ordinary Shares\",\"OST\":\"Other Security Type\",\"FUND\":\"Fund\",\"SP\":\"Structured Product\",\"SI\":\"Secondary Issue\"},\"indexTypes\":{\"INDEX\":\"Index\",\"ETF\":\"Exchange Traded Fund (ETF)\",\"ETN\":\"Exchange Traded Note (ETN)\",\"ETMF\":\"Exchange Traded Managed Fund (ETMF)\",\"SETTLEMENT\":\"Settlement\",\"SPOT\":\"Spot\",\"SUBPROD\":\"Subordinated product\",\"WC\":\"World Currency\",\"ALPHAINDEX\":\"Alpha Index\"}}}",
+      "headers": {
+        "Server": "nginx/1.13.12",
+        "Date": "Sat, 9 Mar 2019 00:38:12 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "956",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "*",
+        "access-control-allow-headers": "Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, Api-Version, Response-Time",
+        "access-control-allow-methods": "GET",
+        "access-control-expose-headers": "Api-Version, Request-Id, Response-Time",
+        "content-md5": "vZe8sJyFaT/kvwlVb6TZPA==",
+        "api-version": "2.0.1",
+        "request-id": "cb2d685d-ff60-4dc9-bcb5-bc8e6126e82c",
+        "response-time": "4",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
