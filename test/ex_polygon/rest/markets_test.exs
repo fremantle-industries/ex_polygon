@@ -10,9 +10,9 @@ defmodule ExPolygon.Rest.MarketsTest do
 
   @api_key System.get_env("POLYGON_API_KEY")
 
-  test ".all returns an ok tuple with a list of markets" do
-    use_cassette "rest/markets/all_ok" do
-      assert {:ok, markets} = ExPolygon.Rest.Markets.all(@api_key)
+  test ".query returns an ok tuple with a list of markets" do
+    use_cassette "rest/markets/query_ok" do
+      assert {:ok, markets} = ExPolygon.Rest.Markets.query(@api_key)
       assert [%ExPolygon.Market{} = _ | _] = markets
     end
   end
