@@ -10,9 +10,9 @@ defmodule ExPolygon.Rest.ExchangesTest do
 
   @api_key System.get_env("POLYGON_API_KEY")
 
-  test ".all returns an ok tuple with a list of exchanges" do
-    use_cassette "rest/exchanges/all_ok" do
-      assert {:ok, exchanges} = ExPolygon.Rest.Exchanges.all(@api_key)
+  test ".query returns an ok tuple with a list of exchanges" do
+    use_cassette "rest/exchanges/query_ok" do
+      assert {:ok, exchanges} = ExPolygon.Rest.Exchanges.query(@api_key)
       assert [%ExPolygon.Exchange{} = exchange | _] = exchanges
       assert exchange.type != nil
     end
