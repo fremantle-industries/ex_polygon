@@ -1,6 +1,7 @@
 defmodule ExPolygon.Rest.HTTPClientTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
+  import Mock
   doctest ExPolygon.Rest.HTTPClient
 
   setup_all do
@@ -34,6 +35,16 @@ defmodule ExPolygon.Rest.HTTPClientTest do
 
       assert reason ==
                {:unauthorized, "API Key - Alpaca API Keys are not permissioned for this route"}
+    end
+  end
+
+  test ".get returns an error tuple for a timeout" do
+    with_mock HTTPoison, get: fn _url -> {:error, %HTTPoison.Error{reason: :timeout}} end do
+      assert ExPolygon.Rest.HTTPClient.get(
+               "/v1/reference/tickers",
+               %{locale: "us"},
+               @api_key
+             ) == {:error, :timeout}
     end
   end
 end
