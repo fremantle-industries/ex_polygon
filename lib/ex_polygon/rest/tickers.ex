@@ -1,12 +1,17 @@
 defmodule ExPolygon.Rest.Tickers do
+  @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
+  @type tickers :: ExPolygon.Tickers.t()
+
   @path "/v2/reference/tickers"
-  def all(params, api_key) do
+
+  @spec query(map, api_key) :: {:ok, tickers}
+  def query(params, api_key) do
     @path
     |> ExPolygon.Rest.HTTPClient.get(params, api_key)
     |> parse_response()
   end
 
-  def parse_response({:ok, %{"tickers" => raw_tickers} = data}) do
+  defp parse_response({:ok, %{"tickers" => raw_tickers} = data}) do
     tickers =
       raw_tickers
       |> Enum.map(&Mapail.map_to_struct(&1, ExPolygon.Ticker, transformations: [:snake_case]))

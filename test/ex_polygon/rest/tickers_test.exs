@@ -10,10 +10,10 @@ defmodule ExPolygon.Rest.TickersTest do
 
   @api_key System.get_env("POLYGON_API_KEY")
 
-  test ".get returns an ok tuple with the parsed json data" do
-    use_cassette "rest/tickers/all_ok" do
+  test ".query returns an ok tuple with the parsed json data" do
+    use_cassette "rest/tickers/query_ok" do
       assert {:ok, tickers} =
-               ExPolygon.Rest.Tickers.all(
+               ExPolygon.Rest.Tickers.query(
                  %{locale: "us", page: 1, perpage: 50},
                  @api_key
                )
