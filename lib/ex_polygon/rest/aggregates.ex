@@ -1,5 +1,6 @@
 defmodule ExPolygon.Rest.Aggregates do
   @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
+  @type shared_error_reasons :: ExPolygon.Rest.HTTPClient.shared_error_reasons()
   @type aggregate :: ExPolygon.Aggregate.t()
 
   @path "/v2/aggs/ticker/:symbol/range/:multiplier/:timespan/:from/:to"
@@ -12,23 +13,25 @@ defmodule ExPolygon.Rest.Aggregates do
           String.t(),
           api_key
         ) ::
-          {:ok, aggregate}
+          {:ok, aggregate} | {:error, shared_error_reasons}
   def query(symbol, multiplier, timespan, from, to, api_key) when is_integer(multiplier) do
     query(symbol, multiplier |> Integer.to_string(), timespan, from, to, api_key)
   end
 
   def query(symbol, multiplier, timespan, from, to, api_key) do
-    @path
-    |> String.replace(":symbol", symbol)
-    |> String.replace(":multiplier", multiplier)
-    |> String.replace(":timespan", timespan)
-    |> String.replace(":from", from)
-    |> String.replace(":to", to)
-    |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
-    |> parse_response()
+    with {:ok, data} <-
+           @path
+           |> String.replace(":symbol", symbol)
+           |> String.replace(":multiplier", multiplier)
+           |> String.replace(":timespan", timespan)
+           |> String.replace(":from", from)
+           |> String.replace(":to", to)
+           |> ExPolygon.Rest.HTTPClient.get(%{}, api_key) do
+      parse_response(data)
+    end
   end
 
-  def parse_response({:ok, %{"results" => results} = data}) do
+  def parse_response(%{"results" => results} = data) do
     results =
       results
       |> Enum.map(

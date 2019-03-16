@@ -1,17 +1,18 @@
 defmodule ExPolygon.Rest.Tickers do
   @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
+  @type shared_error_reasons :: ExPolygon.Rest.HTTPClient.shared_error_reasons()
   @type tickers :: ExPolygon.Tickers.t()
 
   @path "/v2/reference/tickers"
 
-  @spec query(map, api_key) :: {:ok, tickers}
+  @spec query(map, api_key) :: {:ok, tickers} | {:error, shared_error_reasons}
   def query(params, api_key) do
-    @path
-    |> ExPolygon.Rest.HTTPClient.get(params, api_key)
-    |> parse_response()
+    with {:ok, data} <- ExPolygon.Rest.HTTPClient.get(@path, params, api_key) do
+      parse_response(data)
+    end
   end
 
-  defp parse_response({:ok, %{"tickers" => raw_tickers} = data}) do
+  defp parse_response(%{"tickers" => raw_tickers} = data) do
     tickers =
       raw_tickers
       |> Enum.map(&Mapail.map_to_struct(&1, ExPolygon.Ticker, transformations: [:snake_case]))
