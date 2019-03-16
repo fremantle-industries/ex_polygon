@@ -4,8 +4,8 @@ defmodule ExPolygon.Rest.Types do
 
   @path "/v2/reference/types"
 
-  @spec all(api_key) :: {:ok, type}
-  def all(api_key) do
+  @spec query(api_key) :: {:ok, type}
+  def query(api_key) do
     @path
     |> ExPolygon.Rest.HTTPClient.get(%{}, api_key)
     |> parse_response()
