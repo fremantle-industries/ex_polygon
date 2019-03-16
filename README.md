@@ -1,4 +1,5 @@
 # ExPolygon
+[![CircleCI](https://circleci.com/gh/fremantle-capital/ex_polygon.svg?style=svg)](https://circleci.com/gh/fremantle-capital/ex_polygon)
 
 Polygon.io API Client for Elixir
 
