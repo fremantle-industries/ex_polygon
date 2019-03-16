@@ -10,9 +10,9 @@ defmodule ExPolygon.Rest.LocalesTest do
 
   @api_key System.get_env("POLYGON_API_KEY")
 
-  test ".all returns an ok tuple with a list of locales" do
-    use_cassette "rest/locales/all_ok" do
-      assert {:ok, locales} = ExPolygon.Rest.Locales.all(@api_key)
+  test ".query returns an ok tuple with a list of locales" do
+    use_cassette "rest/locales/query_ok" do
+      assert {:ok, locales} = ExPolygon.Rest.Locales.query(@api_key)
       assert [%ExPolygon.Locale{} = _ | _] = locales
     end
   end
