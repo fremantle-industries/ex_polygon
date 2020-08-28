@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v1/marketstatus/now?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"market\":\"open\",\"serverTime\":\"2020-08-28T13:58:35-04:00\",\"exchanges\":{\"nyse\":\"open\",\"nasdaq\":\"open\",\"otc\":\"open\"},\"currencies\":{\"fx\":\"open\",\"crypto\":\"open\"}}",
+      "headers": {
+        "Server": "nginx/1.17.8",
+        "Date": "Fri, 28 Aug 2020 17:58:35 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "158",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "*",
+        "X-Request-Id": "caebfadfcd8a5db7d33b51395feab731",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

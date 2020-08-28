@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.polygon.io/v2/reference/splits/AAPL?apiKey=***"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"status\":\"OK\",\"count\":4,\"results\":[{\"ticker\":\"AAPL\",\"exDate\":\"2020-08-31\",\"paymentDate\":\"2020-08-28\",\"declaredDate\":\"2020-07-30\",\"ratio\":0.25,\"tofactor\":1,\"forfactor\":4},{\"ticker\":\"AAPL\",\"exDate\":\"2014-06-10\",\"paymentDate\":\"2014-06-09\",\"ratio\":0.14285714285714285,\"tofactor\":1,\"forfactor\":7},{\"ticker\":\"AAPL\",\"exDate\":\"2005-02-28\",\"paymentDate\":\"2005-02-28\",\"ratio\":0.5},{\"ticker\":\"AAPL\",\"exDate\":\"2000-06-21\",\"paymentDate\":\"2000-06-21\",\"ratio\":0.5}]}",
+      "headers": {
+        "Server": "nginx/1.17.8",
+        "Date": "Fri, 28 Aug 2020 18:29:38 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "452",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "X-Request-Id": "60cb1cdeb02166f78b83f8431c106a83",
+        "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
