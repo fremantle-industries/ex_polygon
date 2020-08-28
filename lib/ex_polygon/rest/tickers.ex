@@ -6,7 +6,7 @@ defmodule ExPolygon.Rest.Tickers do
   @path "/v2/reference/tickers"
 
   @spec query(map, api_key) :: {:ok, tickers} | {:error, shared_error_reasons}
-  def query(params, api_key) do
+  def query(params \\ %{}, api_key) do
     with {:ok, data} <- ExPolygon.Rest.HTTPClient.get(@path, params, api_key) do
       parse_response(data)
     end

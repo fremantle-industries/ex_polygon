@@ -1,7 +1,7 @@
-defmodule ExPolygon.Rest.Types do
+defmodule ExPolygon.Rest.TickerTypes do
+  @type type :: ExPolygon.TickerType.t()
   @type api_key :: ExPolygon.Rest.HTTPClient.api_key()
   @type shared_error_reasons :: ExPolygon.Rest.HTTPClient.shared_error_reasons()
-  @type type :: ExPolygon.Type.t()
 
   @path "/v2/reference/types"
 
@@ -13,7 +13,9 @@ defmodule ExPolygon.Rest.Types do
   end
 
   def parse_response(%{"status" => "OK", "results" => results}) do
-    {:ok, type} = Mapail.map_to_struct(results, ExPolygon.Type, transformations: [:snake_case])
+    {:ok, type} =
+      Mapail.map_to_struct(results, ExPolygon.TickerType, transformations: [:snake_case])
+
     {:ok, type}
   end
 end
